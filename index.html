@@ -31,6 +31,200 @@
   }
   .title, .timer, #nextBtn { position: relative; z-index: 1; }
   .title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .timer {
+    font-size: 64px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 32px;
+  }
+  .title, .timer {
+    color: #000;
+    /* מסגרת לבנה עבה סביב האותיות והמספרים */
+    text-shadow:
+      2.0px 0.0px 0 #fff,
+      1.9px 0.7px 0 #fff,
+      1.5px 1.3px 0 #fff,
+      1.0px 1.7px 0 #fff,
+      0.3px 2.0px 0 #fff,
+      -0.3px 2.0px 0 #fff,
+      -1.0px 1.7px 0 #fff,
+      -1.5px 1.3px 0 #fff,
+      -1.9px 0.7px 0 #fff,
+      -2.0px 0.0px 0 #fff,
+      -1.9px -0.7px 0 #fff,
+      -1.5px -1.3px 0 #fff,
+      -1.0px -1.7px 0 #fff,
+      -0.3px -2.0px 0 #fff,
+      0.3px -2.0px 0 #fff,
+      1.0px -1.7px 0 #fff,
+      1.5px -1.3px 0 #fff,
+      1.9px -0.7px 0 #fff,
+      3.0px 0.0px 0 #fff,
+      2.8px 1.0px 0 #fff,
+      2.3px 1.9px 0 #fff,
+      1.5px 2.6px 0 #fff,
+      0.5px 3.0px 0 #fff,
+      -0.5px 3.0px 0 #fff,
+      -1.5px 2.6px 0 #fff,
+      -2.3px 1.9px 0 #fff,
+      -2.8px 1.0px 0 #fff,
+      -3.0px 0.0px 0 #fff,
+      -2.8px -1.0px 0 #fff,
+      -2.3px -1.9px 0 #fff,
+      -1.5px -2.6px 0 #fff,
+      -0.5px -3.0px 0 #fff,
+      0.5px -3.0px 0 #fff,
+      1.5px -2.6px 0 #fff,
+      2.3px -1.9px 0 #fff,
+      2.8px -1.0px 0 #fff,
+      4.0px 0.0px 0 #fff,
+      3.8px 1.4px 0 #fff,
+      3.1px 2.6px 0 #fff,
+      2.0px 3.5px 0 #fff,
+      0.7px 3.9px 0 #fff,
+      -0.7px 3.9px 0 #fff,
+      -2.0px 3.5px 0 #fff,
+      -3.1px 2.6px 0 #fff,
+      -3.8px 1.4px 0 #fff,
+      -4.0px 0.0px 0 #fff,
+      -3.8px -1.4px 0 #fff,
+      -3.1px -2.6px 0 #fff,
+      -2.0px -3.5px 0 #fff,
+      -0.7px -3.9px 0 #fff,
+      0.7px -3.9px 0 #fff,
+      2.0px -3.5px 0 #fff,
+      3.1px -2.6px 0 #fff,
+      3.8px -1.4px 0 #fff,
+      5.0px 0.0px 0 #fff,
+      4.7px 1.7px 0 #fff,
+      3.8px 3.2px 0 #fff,
+      2.5px 4.3px 0 #fff,
+      0.9px 4.9px 0 #fff,
+      -0.9px 4.9px 0 #fff,
+      -2.5px 4.3px 0 #fff,
+      -3.8px 3.2px 0 #fff,
+      -4.7px 1.7px 0 #fff,
+      -5.0px 0.0px 0 #fff,
+      -4.7px -1.7px 0 #fff,
+      -3.8px -3.2px 0 #fff,
+      -2.5px -4.3px 0 #fff,
+      -0.9px -4.9px 0 #fff,
+      0.9px -4.9px 0 #fff,
+      2.5px -4.3px 0 #fff,
+      3.8px -3.2px 0 #fff,
+      4.7px -1.7px 0 #fff;
+  }
+  button {
+    font-size: 18px;
+    padding: 14px 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .hidden { display: none !important; }
+  #errorScreen {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    color: #5f6368;
+    z-index: 10;
+    overflow-y: auto;
+    font-family: Roboto, "Segoe UI", Arial, sans-serif;
+  }
+  #errorScreen .wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 72px 24px 40px;
+    text-align: start;
+  }
+  #errorScreen .err-icon { width: 72px; height: 72px; margin-bottom: 28px; }
+  #errorScreen h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 16px;
+  }
+  #errorScreen p { font-size: 15px; line-height: 1.6; margin-bottom: 14px; }
+  #errorScreen .code { font-size: 12px; color: #80868b; margin-top: 28px; }
+  #errorScreen .reload {
+    margin-top: 32px;
+    background: #1a73e8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 100px;
+  }
+  @media (prefers-color-scheme: dark) {
+    #errorScreen { background: #202124; color: #9aa0a6; }
+    #errorScreen h1 { color: #e8eaed; }
+    #errorScreen .reload { background: #8ab4f8; color: #202124; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="title">תוכלו להמשיך לדף הבא כשהטיימר יגמר ויפתח הכפתור למטה</div>
+  <div class="timer" id="timerDisplay">10:00</div>
+  <button id="nextBtn" class="hidden">המשך</button>
+
+  <div id="errorScreen" class="hidden">
+    <div class="wrap">
+      <svg class="err-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 8h26l14 14v42a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" fill="#dadce0"/>
+        <path d="M44 8l14 14H46a2 2 0 0 1-2-2V8z" fill="#bdc1c6"/>
+        <circle cx="30" cy="40" r="2.6" fill="#5f6368"/>
+        <circle cx="44" cy="40" r="2.6" fill="#5f6368"/>
+        <path d="M28 54c3-4 13-4 16 0" stroke="#5f6368" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h1>לא ניתן להשתמש באפליקציה זו בטלפון הזה</h1>
+      <p>האפליקציה אינה נתמכת במכשיר זה.</p>
+      <p>נסו את הפעולות הבאות:</p>
+      <p>• בדקו את החיבור לאינטרנט<br>• ודאו שהמכשיר שלכם נתמך</p>
+      <div class="code">ERR_DEVICE_NOT_SUPPORTED</div>
+      <button class="reload" type="button">טען מחדש</button>
+    </div>
+  </div>
+
+<script>
+/*
+  הגדרה - משך הטיימר בשניות. לשינוי בהמשך.
+*/
+const DURATION_SECONDS = 10 * 60;
+
+const STORAGE_KEY = "timer_screen_end_time";
+
+// זמן הסיום נשמר כ-timestamp אמיתי (epoch ms), כדי לשרוד סגירה/פתיחה מחדש
+// של האפליקציה ומעבר לרקע. בכל render מחשבים מחדש לפי Date.now() הנוכחי,
+// כך שאין תלות ברצף ריצה של טיימר JS ברקע (שבכל מקרה לא מובטח לרוץ
+// כשהאפליקציה לא בחזית).
+let endTime = loadEndTime();
+let tickInterval = null;
+
+function loadEndTime() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) return parseInt(stored, 10);
+  const fresh = Date.now() + DURATION_SECONDS * 1000;
+  localStorage.setItem(STORAGE_KEY, fresh);
+  return fresh;
+}
+
+function secondsRemaining() {
+  return Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
+}
+
+function formatTime(totalSeconds) {
   const m = Math.floor(totalSeconds / 60).toString().padStart(2, "0");
   const s = (totalSeconds % 60).toString().padStart(2, "0");
   return m + ":" + s;
