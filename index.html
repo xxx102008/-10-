@@ -27,98 +27,10 @@
     background-image: url('https://play-lh.googleusercontent.com/is1KpW8qM1k0k09yn9I5C4cSnCmuLLwmXG9kLVF4p0gj07PeoYJgbs4wYJYK7KQJhjwr86T5C3scWQC_eQoByw=w526-h296-rw');
     background-size: cover;
     background-position: center;
-    opacity: 0.80; /* שקיפות התמונה: 0 = שקוף לגמרי, 1 = רגיל */
+    opacity: 0.45; /* שקיפות התמונה: 0 = שקוף לגמרי, 1 = רגיל */
   }
   .title, .timer, #nextBtn { position: relative; z-index: 1; }
   .title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    text-align: center;
-    padding: 0 20px;
-  }
-  .timer {
-    font-size: 64px;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    margin-bottom: 32px;
-  }
-  .title, .timer {
-    color: #000;
-    text-shadow:
-      -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
-      0 -2px 0 #fff, 0 2px 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff,
-      -3px 0 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, 0 3px 0 #fff;
-  }
-  button {
-    font-size: 18px;
-    padding: 14px 40px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  button:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-  .hidden { display: none !important; }
-  #errorScreen {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    color: #5f6368;
-    z-index: 10;
-    overflow-y: auto;
-    font-family: Roboto, "Segoe UI", Arial, sans-serif;
-  }
-  #errorScreen .wrap {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 72px 24px 40px;
-    text-align: start;
-  }
-  #errorScreen .err-icon { width: 72px; height: 72px; margin-bottom: 28px; }
-  #errorScreen h1 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #202124;
-    margin-bottom: 16px;
-  }
-  #errorScreen p { font-size: 15px; line-height: 1.6; margin-bottom: 14px; }
-  #errorScreen .code { font-size: 12px; color: #80868b; margin-top: 28px; }
-  #errorScreen .reload {
-    margin-top: 32px;
-    background: #1a73e8;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 24px;
-    border-radius: 100px;
-  }
-  @media (prefers-color-scheme: dark) {
-const STORAGE_KEY = "timer_screen_end_time";
-
-// זמן הסיום נשמר כ-timestamp אמיתי (epoch ms), כדי לשרוד סגירה/פתיחה מחדש
-// של האפליקציה ומעבר לרקע. בכל render מחשבים מחדש לפי Date.now() הנוכחי,
-// כך שאין תלות ברצף ריצה של טיימר JS ברקע (שבכל מקרה לא מובטח לרוץ
-// כשהאפליקציה לא בחזית).
-let endTime = loadEndTime();
-let tickInterval = null;
-
-function loadEndTime() {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) return parseInt(stored, 10);
-  const fresh = Date.now() + DURATION_SECONDS * 1000;
-  localStorage.setItem(STORAGE_KEY, fresh);
-  return fresh;
-}
-
-function secondsRemaining() {
-  return Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
-}
-
-function formatTime(totalSeconds) {
   const m = Math.floor(totalSeconds / 60).toString().padStart(2, "0");
   const s = (totalSeconds % 60).toString().padStart(2, "0");
   return m + ":" + s;
